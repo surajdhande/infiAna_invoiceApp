@@ -1,0 +1,64 @@
+.home-page {
+  display: flex;
+  background-color: whitesmoke;
+  flex-direction: column;
+  height: 100vh;
+  .header {
+    height: 80px;
+    background-color: #630bc9;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .logo {
+      height: 60px;
+      margin: 2vw;
+    }
+    span {
+      margin: 2vw;
+      font-size: 24px;
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  .menu-items {
+    display: flex;
+    height: 20px;
+    align-items: center;
+    font-size: 24px;
+
+    .title {
+      color: #630bc9;
+      margin: 0 50px;
+      font-weight: bold;
+    }
+    .crt-invc {
+      background-color: #630bc9;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 18px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  .row-heading {
+    background-color: #630bc9;
+    min-height: 3%;
+    align-items: center;
+    margin: 0 30px;
+    margin-top: 40px;
+
+    .ant-col {
+      font-size: 16px;
+      color: white;
+      font-weight: bold;
+    }
+  }
+  .scrolling {
+    .row-datasource {
+      margin: 15px 30px;
+    }
+  }
+}

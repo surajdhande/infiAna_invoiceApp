@@ -1,0 +1,100 @@
+.invoice {
+  // background-color: red;
+  // margin: 5vh;
+  // padding-inline: 10%;
+  //   height: 100vh;
+  p {
+    margin: 3px;
+    max-width: 280px;
+  }
+  font-weight: 200;
+  &-details {
+    background-color: whitesmoke;
+    margin: 5% 15%;
+    padding-inline: 5%;
+    box-shadow: 0 0 12px black;
+
+
+  }
+  .details {
+
+    &-sender {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    //   margin: 5%;
+
+      &-from {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+
+       
+      }
+      &-label {
+        font-size: 48px;
+        font-weight: bold;
+      }
+    }
+    &-receiver{
+        display: flex;
+        margin-top: 5%;
+        justify-content: space-between;
+        &-to{
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+
+        }
+        h4{
+            margin: 10px;
+            label{
+                font-weight: 300;
+
+            }
+        }
+      
+    }
+    &-costSummary{
+        margin-top: 5%;
+        text-align: left;
+        .row-heading{
+            margin-top: 2%;
+            color: white;
+            min-height: 30px;
+            background-color: gray;
+            align-items: center;
+            text-align: center;
+        }
+        .items{
+            margin-top: 2%;
+            text-align: center;
+        }
+    }
+    &-note{
+        h3{
+            margin: 10px 0;
+        }
+        margin-top: 5%;
+       text-align: left;
+    }
+    &-terms-condition{
+        h3{
+            margin: 10px 0;
+        }
+        margin-top: 5%;
+        text-align: left;
+        font-weight: 500;
+
+    }
+    &-btns{
+        padding: 5%;
+        display: flex;
+        justify-content: space-evenly;
+        button{
+            background-color: black;
+            color: white;
+        }
+    }
+  }
+}
