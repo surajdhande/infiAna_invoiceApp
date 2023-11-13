@@ -35,7 +35,6 @@ const Home = () => {
   };
   const overDueStatus = (idx) => {
     if (invoicesData?.[idx].status !== "Paid") {
-      console.log(invoicesData?.status);
       const todaysDate = moment(new Date().toLocaleDateString(), "DD/MM/YYYY");
       const billTobePaid = moment(invoicesData?.[idx].dueDate, "DD/MM/YYYY");
       const differenceInDays = moment
@@ -49,7 +48,6 @@ const Home = () => {
       }
     } else {
       const paidDate = moment(invoicesData?.[idx].paidDate, "DD/MM/YYYY");
-      console.log(paidDate);
       const billTobePaid = moment(invoicesData?.[idx].dueDate, "DD/MM/YYYY");
       const differenceInDays = moment
         .duration(billTobePaid.diff(paidDate))

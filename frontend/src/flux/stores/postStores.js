@@ -43,9 +43,7 @@ class InvoiceStore extends EventEmitter {
     this.saveToLocalStorage();
   }
   getInvoiceById(id) {
-    console.log(id);
     const data = invoices?.find((invoice) => invoice.id === id);
-    console.log(data);
     return data;
   }
   updateInvoice(id, fieldName, newValue) {
