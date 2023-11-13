@@ -34,14 +34,32 @@ const Home = () => {
     navigate(`/details?id=${id}`);
   };
   const overDueStatus = (idx) => {
-    const date1 = moment(new Date().toLocaleDateString(), "DD/MM/YYYY");
-    const date2 = moment(invoicesData?.[idx].dueDate, "DD/MM/YYYY");
+    if (invoicesData?.[idx].status !== "Paid") {
+      console.log(invoicesData?.status);
+      const todaysDate = moment(new Date().toLocaleDateString(), "DD/MM/YYYY");
+      const billTobePaid = moment(invoicesData?.[idx].dueDate, "DD/MM/YYYY");
+      const differenceInDays = moment
+        .duration(billTobePaid.diff(todaysDate))
+        .asDays();
 
-    const differenceInDays = moment.duration(date2.diff(date1)).asDays();
-    if (differenceInDays > -1) {
-      return "No";
+      if (differenceInDays > -1) {
+        return "No";
+      } else {
+        return "Yes";
+      }
     } else {
-      return "Yes";
+      const paidDate = moment(invoicesData?.[idx].paidDate, "DD/MM/YYYY");
+      console.log(paidDate);
+      const billTobePaid = moment(invoicesData?.[idx].dueDate, "DD/MM/YYYY");
+      const differenceInDays = moment
+        .duration(billTobePaid.diff(paidDate))
+        .asDays();
+
+      if (differenceInDays > -1) {
+        return "No";
+      } else {
+        return "Yes";
+      }
     }
   };
 

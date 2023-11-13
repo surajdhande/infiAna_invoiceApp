@@ -1,20 +1,5 @@
 import React, { useState } from "react";
-import {
-  Button,
-  Cascader,
-  Checkbox,
-  DatePicker,
-  Form,
-  Input,
-  InputNumber,
-  Modal,
-  Radio,
-  Select,
-  Slider,
-  Switch,
-  TreeSelect,
-  Upload,
-} from "antd";
+import { Button, DatePicker, Form, Input, Modal, Select } from "antd";
 
 import "./invoiceForm.scss";
 import TextArea from "antd/es/input/TextArea";
@@ -33,7 +18,7 @@ const InvoiceForm = () => {
 
   const [laborHours, setLaborHours] = useState(0);
   const [notes, setNotes] = useState("");
-  const [attachments, setAttachments] = useState([]);
+  const [billPaidDate, setAttachments] = useState([]);
   const [modalOpen, setModalOpen] = useState(false);
   const validate = () => {
     if (customerName === "") {
@@ -143,7 +128,7 @@ const InvoiceForm = () => {
           </Form.Item>{" "}
           <Form.Item label=" Pincode ">
             <Input
-            type="number"
+              type="number"
               placeholder="Pincode"
               onChange={(e) => setCustomerAddressLine3(e.target.value)}
             />

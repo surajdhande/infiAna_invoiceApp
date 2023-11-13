@@ -37,7 +37,7 @@ class InvoiceStore extends EventEmitter {
   addInvoice(invoiceData) {
     invoiceData.id = Date.now();
     invoiceData.status = "Unpaid";
-
+    invoiceData.paidDate = "-";
     invoices.push(invoiceData);
     this.emitChange();
     this.saveToLocalStorage();

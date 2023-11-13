@@ -17,6 +17,12 @@ const Details = () => {
   }, []);
   const payBill = () => {
     store.updateInvoice(parseInt(id), "status", "Paid");
+    store.updateInvoice(
+      parseInt(id),
+      "paidDate",
+      new Date().toLocaleDateString()
+    );
+
     window.location.reload();
   };
   //   const sendEmail = async (recipient, subject, body, pdfFile) => {
@@ -183,7 +189,10 @@ const Details = () => {
           <section className="details-receiver-to">
             <h3>Bill To</h3>
             <p>{details?.customerName}</p>
-            <p>{details?.customerAddressLine1},{details?.customerAddressLine2} - {details?.customerAddressLine3}</p>
+            <p>
+              {details?.customerAddressLine1},{details?.customerAddressLine2} -{" "}
+              {details?.customerAddressLine3}
+            </p>
             <p>India</p>
           </section>
           <section className="details-receiver-to">
